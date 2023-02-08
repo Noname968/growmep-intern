@@ -8,10 +8,11 @@ export default function Login() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     let userdet = {
+      name: data.get("name"),
+      phone: data.get("phone"),
       email: data.get("email"),
-      password: data.get("password"),
     };
-    if (userdet.email !== "" && userdet.password !== "") {
+    if (userdet.email !== "" && userdet.phone !== "" && userdet.name !== "") {
       localStorage.setItem("user", JSON.stringify(userdet));
       window.location.reload()
     } else {

@@ -7,7 +7,8 @@ function App() {
 
   useEffect(() => {
     let loginstate = localStorage.getItem("user");
-    if (JSON.parse(loginstate)) {
+
+    if (loginstate!==null) {
       const email = JSON.parse(loginstate).email;
       if (email !== "") {
         setuser(true);
